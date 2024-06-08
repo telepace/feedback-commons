@@ -1,4 +1,4 @@
-# Feedback Commons
+# AI Commons
 
 **反馈通用工具库**
 
@@ -16,7 +16,7 @@
 
 ## 简介
 
-Feedback Commons 是一个通用工具库，旨在支持企业级 AI 驱动的智能反馈系统的开发。该库包含多种实用工具，如 API 客户端、数据清洗、文件解析、模型定义和异步任务处理。
+AI Commons 是一个通用工具库，旨在支持企业级 AI 驱动的智能反馈系统的开发。该库包含多种实用工具，如 API 客户端、数据清洗、文件解析、模型定义和异步任务处理。
 
 ## 目录
 
@@ -69,7 +69,7 @@ python setup.py install
 #### 示例代码
 
 ```python
-from feedback_commons.api.openai_client import OpenAIClient
+from ai_commons.api.openai_client import OpenAIClient
 
 client = OpenAIClient(api_key='your_api_key')
 response = client.get_response(prompt="Summarize the following feedback...")
@@ -83,7 +83,7 @@ print(response)
 #### 示例代码
 
 ```python
-from feedback_commons.utils.data_cleaning import clean_data
+from ai_commons.utils.data_cleaning import clean_data
 
 data = {"field1": "value1", "field2": None}
 cleaned_data = clean_data(data)
@@ -97,7 +97,7 @@ print(cleaned_data)
 #### 示例代码
 
 ```python
-from feedback_commons.utils.file_parser import parse_excel
+from ai_commons.utils.file_parser import parse_excel
 
 data = parse_excel('path/to/file.xlsx')
 print(data)
@@ -110,7 +110,7 @@ print(data)
 #### 示例代码
 
 ```python
-from feedback_commons.models.feedback import Feedback
+from ai_commons.models.feedback import Feedback
 
 feedback = Feedback(user_id=1, question_id=1, feedback_text="Great product!", score=4.5)
 print(feedback)
@@ -123,7 +123,7 @@ print(feedback)
 #### 示例代码
 
 ```python
-from feedback_commons.tasks.async_tasks import process_feedback
+from ai_commons.tasks.async_tasks import process_feedback
 
 task = process_feedback.delay(feedback_data)
 print(task.id)
