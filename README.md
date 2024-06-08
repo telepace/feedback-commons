@@ -44,10 +44,10 @@ ai-commons/
 │   │   ├── task_scheduler.py
 │   │   ├── celery_task_manager.py
 │   └── data_processing/
-│       ├── __init__.py
-│       ├── data_splitter.py
-│       ├── tag_aggregator.py
-│       └── theme_generator.py
+│   │   ├── __init__.py
+│   │   ├── data_splitter.py
+│   │   ├── tag_aggregator.py
+│   │   └── theme_generator.py
 │   ├── logging_monitoring/
 │   │   ├── __init__.py
 │   │   ├── logger.py
@@ -93,20 +93,51 @@ python setup.py install
 
 ### 工具模块概述
 
-1. **API 客户端**：
-   - `openai_client.py`：封装与 OpenAI API 的交互，简化调用过程。
+1. **文件处理工具类**：
+    - **ExcelParser**：解析 Excel 文件并转换为 JSON、YAML、XML 等格式。
+    - **JSONValidator**：验证 JSON 数据的结构和内容。
+    - **DataCleaner**：清理和格式化数据。
 
-2. **数据清洗工具**：
-   - `data_cleaner.py`：提供数据清洗函数，如处理缺失值、数据标准化等。
+2. **数据库工具类**：
+    - **DatabaseConnector**：处理数据库连接，包括连接池管理。
+    - **QueryExecutor**：执行 SQL 查询和存储过程。
+    - **ORMWrapper**：封装 ORM（如 SQLAlchemy）的基本操作。
 
-3. **文件解析工具**：
-   - `excel_parser.py`：支持 Excel、JSON、YAML 等文件格式的解析和转换。
+3. **API 客户端工具类**：
+    - **OpenAIClient**：与 OpenAI API 进行交互，进行评分和标签化。
+    - **SlackClient**：与 Slack API 进行交互，收集数据。
+    - **WebhookHandler**：处理 Webhook 回调。
 
-4. **模型定义**：
-   - `feedback.py`：定义反馈系统的数据模型，如用户、问题、反馈、标签等。
+4. **异步任务处理工具类**：
+    - **TaskScheduler**：调度和管理异步任务。
+    - **CeleryTaskManager**：管理 Celery 任务队列。
 
-5. **异步任务**：
-   - `celery_task_manager.py`：使用 Celery 实现异步任务处理，包括数据评分和分类等任务。
+5. **数据处理工具类**：
+    - **DataSplitter**：根据用户提供的参数将数据切割成小块。
+    - **TagAggregator**：聚合和合并相似标签。
+    - **ThemeGenerator**：根据标签生成主题。
+
+6. **日志和监控工具类**：
+    - **Logger**：统一的日志记录工具。
+    - **MetricsCollector**：收集和报告系统指标。
+    - **ErrorTracker**：跟踪和报告错误。
+
+7. **安全和权限管理工具类**：
+    - **AuthManager**：管理用户认证和授权。
+    - **AccessControl**：控制资源访问权限。
+
+8. **数据导出工具类**：
+    - **DataExporter**：将处理后的数据导出为各种格式（如 JSON、CSV）。
+    - **ReportGenerator**：生成报告和摘要。
+
+9. **配置管理工具类**：
+    - **ConfigLoader**：加载和管理应用配置。
+    - **EnvironmentManager**：处理不同环境（开发、测试、生产）下的配置管理。
+
+10. **用户界面工具类**：
+    - **FileUploader**：处理文件上传。
+    - **FormValidator**：验证用户提交的表单数据。
+    - **DataVisualizer**：生成数据可视化图表。
 
 ## 使用
 
